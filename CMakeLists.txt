@@ -20,6 +20,7 @@ set(SFML_LIB_DIR "${SFML_ROOT}/lib")
 
 # Add include and library paths
 include_directories(${SFML_INCLUDE_DIR})
+include_directories(${SFML_ROOT}/include)
 link_directories(${SFML_LIB_DIR})
 
 # Source files
