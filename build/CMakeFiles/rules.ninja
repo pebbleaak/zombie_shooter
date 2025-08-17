@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = H:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SE:\Projects\C++\sfml_prog\sfml_template -BE:\Projects\C++\sfml_prog\sfml_template\build
+  command = H:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SE:\Projects\game_programming\sfml_book\zombie_shooter -BE:\Projects\game_programming\sfml_book\zombie_shooter\build
   description = Re-running CMake...
   generator = 1
 

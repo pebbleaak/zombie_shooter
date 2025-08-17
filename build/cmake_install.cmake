@@ -1,4 +1,4 @@
-# Install script for directory: E:/Projects/C++/sfml_prog/sfml_template
+# Install script for directory: E:/Projects/game_programming/sfml_book/zombie_shooter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,7 +40,7 @@ endif()
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "E:/Projects/C++/sfml_prog/sfml_template/build/install_local_manifest.txt"
+  file(WRITE "E:/Projects/game_programming/sfml_book/zombie_shooter/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -56,6 +56,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "E:/Projects/C++/sfml_prog/sfml_template/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "E:/Projects/game_programming/sfml_book/zombie_shooter/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

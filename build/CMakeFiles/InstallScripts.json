@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"E:/Projects/C++/sfml_prog/sfml_template/build/cmake_install.cmake"
+		"E:/Projects/game_programming/sfml_book/zombie_shooter/build/cmake_install.cmake"
 	],
 	"Parallel" : false
 }
