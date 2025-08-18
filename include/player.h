@@ -90,3 +90,4 @@ class Player {
 
     // Increases the player's health by a specified amount
     void increaseHealth(int amount);
+    };

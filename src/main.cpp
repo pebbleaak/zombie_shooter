@@ -1,48 +1,74 @@
-// src/main.cpp
+#include "player.h"
 #include <SFML/Graphics.hpp>
 
 int main() {
-    // Create window
-    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML Empty Window + Square");
-    window.setFramerateLimit(60);
+    
 
-    // Make a square (120x120), colored, with a thin outline
-    const float side = 120.f;
-    sf::RectangleShape square({side, side});
-    square.setFillColor(sf::Color(100, 180, 255));
-    square.setOutlineThickness(3.f);
-    square.setOutlineColor(sf::Color::White);
-
-    // Center the square in the window
-    auto centerSquare = [&](sf::Vector2u size) {
-        square.setPosition(
-            size.x * 0.5f - side * 0.5f,
-            size.y * 0.5f - side * 0.5f
-        );
+    enum class State {
+        PAUSED,
+        PLAYING,
+        GAME_OVER,
+        LEVELING_UP
     };
-    centerSquare(window.getSize());
 
-    // Main loop
-    while (window.isOpen()) {
-        sf::Event e{};
-        while (window.pollEvent(e)) {
-            if (e.type == sf::Event::Closed) {
-                window.close();   // 👈 actually close the window
-            }
-            else if (e.type == sf::Event::Resized) {
-                centerSquare({e.size.width, e.size.height}); // re-center on resize
+    State state = State::GAME_OVER;
+
+    sf::Vector2f resolution;
+
+    resolution.x = sf::VideoMode::getDesktopMode().width;
+    resolution.y = sf::VideoMode::getDesktopMode().height;
+
+    sf::RenderWindow window(sf::VideoMode(resolution.x, resolution.y),"Zombie Arena",sf::Style::Default);
+
+    sf::View mainView(sf::FloatRect(0,0,resolution.x, resolution.y));
+
+
+    sf::Vector2f mouseWorldPosition;
+    sf::Vector2i mouseScreenPosition;
+
+    Player player;
+
+    sf::IntRect arena;
+
+    sf::Time totalGameTime;
+
+    sf::Clock clock;
+
+    while (window.isOpen())
+    {
+
+        sf::Event event;
+
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::KeyPressed)
+            {
+                if (event.key.code == sf::Keyboard::Enter && state  == State::PLAYING)
+                {
+                    state = State::PAUSED;
+                }
+
+                else if (event.key.code == sf::Keyboard::Enter && state == State::PAUSED)
+
+                {
+                    state = State::PLAYING:
+                    clock.restar();
+                }
+
+                else if (event.key.code == sf::Keyboard::Escape && state != State::GAME_OVER)
+                {
+                    state = State::LEVELING_UP;
+                }
+
+                if (state == State::PLAYING)
+                {
+                    // Fill This Code
+                }
+
             }
         }
-
-        // Clear screen
-        window.clear(sf::Color::Black);
-
-        // Draw the square
-        window.draw(square);
-
-        // Display
-        window.display();
     }
+
 
     return 0;
 }
